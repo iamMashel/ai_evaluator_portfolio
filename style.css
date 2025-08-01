@@ -1,67 +1,79 @@
-/* style.css — Professional Polished Theme */
-
-body {
-  font-family: 'Segoe UI', sans-serif;
+/* Reset + Base */
+* {
   margin: 0;
-  background: #fdfdfd;
-  color: #1f2937;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #0f172a; /* slate-900 */
+  color: #f1f5f9;            /* slate-100 */
   line-height: 1.6;
   scroll-behavior: smooth;
 }
 
-header.nav {
-  background: #ffffff;
-  border-bottom: 1px solid #e5e7eb;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  padding: 1rem 0;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  margin: 0;
-  padding: 0;
-}
-
-nav a {
+a {
+  color: #38bdf8; /* sky-400 */
   text-decoration: none;
-  color: #374151;
-  font-weight: 600;
-  transition: color 0.2s ease-in-out;
 }
 
-nav a:hover {
-  color: #2563eb;
+a:hover {
+  text-decoration: underline;
 }
 
-main {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 2rem;
+ul, ol {
+  margin-left: 1.5rem;
+  margin-top: 0.5rem;
 }
 
-#hero {
+pre {
+  background-color: #1e293b; /* slate-800 */
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  font-family: 'Courier New', monospace;
+  margin-top: 0.5rem;
+}
+
+/* Header */
+.hero {
+  background-color: #1e293b; /* slate-800 */
   text-align: center;
-  padding: 5rem 2rem 3rem;
-  background: #f3f4f6;
-  border-radius: 0.75rem;
-  margin-bottom: 3rem;
+  padding: 3rem 1rem;
+  position: relative;
 }
 
-.hero-content h1 {
+.hero h1 {
   font-size: 2.5rem;
-  color: #111827;
-  margin-bottom: 0.5rem;
+  font-weight: 700;
+  color: #facc15; /* yellow-400 */
 }
 
-.tagline {
-  font-size: 1.2rem;
-  color: #6b7280;
+.hero p {
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
+  color: #cbd5e1; /* slate-300 */
+}
+
+.hero-sub {
+  margin-top: 1rem;
   font-style: italic;
+}
+
+/* SVG Waves */
+.wave {
+  display: block;
+  margin: 0;
+  width: 100%;
+  height: 100px;
+}
+
+/* Main */
+.container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
 }
 
 section {
@@ -69,34 +81,53 @@ section {
 }
 
 h2 {
-  font-size: 1.8rem;
-  color: #111827;
-  border-bottom: 2px solid #e5e7eb;
-  padding-bottom: 0.5rem;
+  font-size: 1.5rem;
+  color: #7dd3fc; /* sky-300 */
   margin-bottom: 1rem;
 }
 
-ul {
-  padding-left: 1.5rem;
+h3 {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  color: #f9a8d4; /* pink-300 */
 }
 
-li {
-  margin-bottom: 0.5rem;
+/* Morphing Blobs */
+.blob {
+  width: 100px;
+  height: 100px;
+  background: #22d3ee; /* cyan-400 */
+  margin-bottom: 1rem;
+  border-radius: 50%;
+  animation: morph 8s infinite;
+  transition: border-radius 1s ease;
 }
 
-a {
-  color: #2563eb;
+.blob-section {
+  position: relative;
 }
 
-a:hover {
-  text-decoration: underline;
-}
-
+/* Footer */
 footer {
+  background-color: #1e293b;
+  color: #94a3b8;
+  padding: 2rem 1rem 4rem;
   text-align: center;
-  padding: 2rem;
-  font-size: 0.9rem;
-  background: #f9fafb;
-  color: #6b7280;
-  border-top: 1px solid #e5e7eb;
+  position: relative;
 }
+
+.footer-text {
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+}
+
